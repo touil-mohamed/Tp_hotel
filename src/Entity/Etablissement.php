@@ -30,10 +30,6 @@ class Etablissement
     #[ORM\OneToMany(mappedBy: 'etablissementId', targetEntity: Suite::class)]
     private Collection $suites;
 
-    public function __construct()
-    {
-        $this->suites = new ArrayCollection();
-    }
 
     public function getId(): ?int
     {
@@ -116,5 +112,10 @@ class Etablissement
         }
 
         return $this;
+    }
+    
+    public function __toString()
+    {
+        return $this->nom;
     }
 }

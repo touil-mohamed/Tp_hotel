@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\SuiteRepository;
 use Doctrine\DBAL\Types\Types;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: SuiteRepository::class)]
@@ -32,6 +33,11 @@ class Suite
     #[ORM\ManyToOne(inversedBy: 'suites')]
     #[ORM\JoinColumn(nullable: false)]
     private ?etablissement $etablissementId = null;
+
+    public function __construct()
+    {
+        return $this -> id;
+    }
 
     public function getId(): ?int
     {
