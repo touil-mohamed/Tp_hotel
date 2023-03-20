@@ -28,16 +28,12 @@ class Suite
     private ?float $prix = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $galeryImage = null;
+    private  ?array $galeryImage = [];
 
     #[ORM\ManyToOne(inversedBy: 'suites')]
     #[ORM\JoinColumn(nullable: false)]
     private ?etablissement $etablissementId = null;
 
-    public function __construct()
-    {
-        return $this -> id;
-    }
 
     public function getId(): ?int
     {
@@ -92,15 +88,14 @@ class Suite
         return $this;
     }
 
-    public function getGaleryImage(): ?string
+    public function getGaleryImage(): ?array
     {
         return $this->galeryImage;
     }
 
-    public function setGaleryImage(string $galeryImage): self
+    public function setGaleryImage(array $galeryImage): self
     {
-        $this->galeryImage = $galeryImage;
-
+        $this->galeryImage[]=$galeryImage;
         return $this;
     }
 

@@ -26,12 +26,14 @@ class SuiteCrudController extends AbstractCrudController
             ->setBasePath('uploads/images'),
             TextField::new('description'),
             ImageField::new('galery_image')
+            ->setFormTypeOptions([
+                "multiple" => true,
+            ])
             ->setUploadDir('/public/uploads/images/')
             ->setBasePath('uploads/images'),
             MoneyField::new('prix')
             ->setCurrency('EUR'),
             AssociationField::new('etablissementId')
-
         ];
     }
     

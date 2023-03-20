@@ -10,7 +10,7 @@ use App\Entity\Etablissement;
 
 class EtablissementController extends AbstractController
 {
-    #[Route('/etablissement', name: 'app_etablissement')]
+    #[Route('/etablissements', name: 'app_etablissement')]
     public function index(ManagerRegistry $doctrine): Response
     {
         $etablissementRepository = $doctrine->getRepository(Etablissement::class);

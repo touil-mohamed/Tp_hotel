@@ -1,0 +1,19 @@
+{% include 'home/index.html.twig' %}
+
+{% block body %}
+<div class="card mb-3">
+  <img src="/images/{{suites.image}}" class="card-img-top" alt="..." height="500px" width="200px">
+  <div class="card-body">
+    <h5 class="card-title">{{suites.titre}}</h5>
+    <p class="card-text text-end">La nuit pour {{suites.prix}} €</p>
+    <p class="card-text"><small class="text-muted">{{suites.description}}</small></p>
+    </div>
+      <img src="/images/{{suites.galeryImage[0]}}" class="rounded mx-auto d-block" alt="..." height="300px" width="600px">
+      <img src="/images/{{suites.galeryImage[1]}}" class="rounded mx-auto d-block" alt="..." height="300px" width="600px">
+      <img src="/images/{{suites.galeryImage[2]}}" class="rounded mx-auto d-block" alt="..." height="300px" width="600px">
+
+</div>
+</div>
+
+
+{% endblock %}
